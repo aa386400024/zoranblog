@@ -34,7 +34,7 @@ router.post('/upload', showUpload.single('thumb_img'), async(req, res, next) => 
   // .split('public')[1]通过这个方法，把路径从public中间截开，1代表public后面的内容
   let imgPath = req.file.path.split('public')[1]
   // 将截取的路径和服务器拼接
-  let imgUrl = 'http://127.0.0.1:3000' + imgPath
+  let imgUrl = 'http://112.126.63.123:3000' + imgPath
   // 发送给前端
   res.send({ code: 0, msg: '上传成功', data: imgUrl })
 })

@@ -27,11 +27,15 @@ module.exports = {
       user : 'root', // 服务器的名
       host : '112.126.63.123', // 服务器ip
       ref  : 'origin/master',
-      repo : 'GIT_REPOSITORY',
-      path : 'DESTINATION_PATH',
+      repo : 'git@github.com:aa386400024/zoranblog.git', // github上的链接
+      path : '/usr/local/myProject', // 存放在服务器上的路径
+      ssh_options: "StrictHostKeyChecking=no", // 秘钥检测设置为不需要
       'pre-deploy-local': '',
       'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
-      'pre-setup': ''
+      'pre-setup': '',
+      "env": {
+        "NODE_ENV": "production"
+        }
     }
   }
 };

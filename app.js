@@ -38,9 +38,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressJWT({
   secret: PRIVATE_KEY // 秘钥
 }).unless({ // unless白名单，里面的路由地址不需要校验token
-  path: ['/api/user/register', '/api/user/info', '/api/user/login','/api/user/upload', '/api/article/upload', '/api/article/allList','/api/article/detail','/api/comment/list', '/api/banner/upload', '/api/banner/allBanner', '/api/friendlylink/allFriendly', '/api/friendlylink/upload',]  //白名单,除了这里写的地址，其他的URL都需要验证
+  path: ['/api/user/register','/api/user/info','/api/user/login','/api/user/upload', '/api/article/upload', '/api/article/allList','/api/article/detail','/api/comment/list', '/api/banner/upload', '/api/banner/allBanner', '/api/friendlylink/allFriendly', '/api/friendlylink/upload',]  //白名单,除了这里写的地址，其他的URL都需要验证
 }));
-
+// 下面是api前缀
 app.use('/api/article', artRouter);
 app.use('/api/user', usersRouter);
 app.use('/api/comment', commentRouter);
